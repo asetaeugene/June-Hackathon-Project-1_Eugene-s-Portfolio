@@ -15,25 +15,25 @@ Welcome to the official repository for my personal portfolio website! This proje
 This portfolio is built with a modern tech stack and includes a variety of features to create a dynamic and informative user experience:
 
 -   **🎨 Sleek Header & Navigation**:
-        A fully responsive header with a smooth-scrolling navigation bar and a mobile-friendly hamburger menu.
+       - A fully responsive header with a smooth-scrolling navigation bar and a mobile-friendly hamburger menu.
 -   **🌟 Animated Hero Section**: An engaging hero section featuring:
     -   A background image with a frosted glass effect.
     -   A profile card showcasing my programming language proficiency with progress bars.
     -   A dynamic typing animation for my job titles.
 -   **🧑‍🦰 About Me Section**:
-        A detailed section providing personal information, a brief bio, and links to my social profiles.
+       - A detailed section providing personal information, a brief bio, and links to my social profiles.
 -   **📜 Scrolling Marquee**:
-        An eye-catching marquee that continuously scrolls through key skills and attributes.
+       - An eye-catching marquee that continuously scrolls through key skills and attributes.
 -   **🎓 Educational & Experience Timeline**:
-        A clear, two-column timeline detailing my educational background and professional experience.
+       - A clear, two-column timeline detailing my educational background and professional experience.
 -   **💌 Interests Showcase**:
-        A beautiful grid layout displaying my personal interests with icons and descriptions.
+       - A beautiful grid layout displaying my personal interests with icons and descriptions.
 -   **🧑‍💻 Projects Gallery**:
-        A responsive grid showcasing my latest projects with interactive hover effects that reveal project details.
+       - A responsive grid showcasing my latest projects with interactive hover effects that reveal project details.
 -   **📞 Functional Contact Form**:
-        An integrated contact form using **Formspree** to handle submissions without requiring a backend.
+       - An integrated contact form using **Formspree** to handle submissions without requiring a backend.
 -   **📱 Fully Responsive Design**:
-        The layout seamlessly adapts to all screen sizes, from large desktops to mobile devices, ensuring a great experience for every user.
+       - The layout seamlessly adapts to all screen sizes, from large desktops to mobile devices, ensuring a great experience for every user.
 
 ---
 
