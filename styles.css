@@ -14,6 +14,7 @@
 /* Smooth scrolling and default font for the entire document */
 html{
     padding: 0;
+    font-size: 16px;
     margin: 0 auto;
     font-family: 'Poppins', sans-serif; /* Sets a modern, clean font */
     scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
@@ -28,6 +29,7 @@ body{
     width: 100vw; /* Full viewport width */
     overflow: scroll; /* Allows vertical scrolling */
     overflow-x: hidden; /* Prevents horizontal scrolling */
+    min-width: 320px; /* prevents content from squezzing*/
 }
 
 /* ==========================================================================
@@ -45,7 +47,7 @@ header::before{
 /* Main header container */
 .site-header {
     width: 100%;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100; /* Ensures header is above other content */
@@ -74,6 +76,8 @@ header::before{
     margin-right: 6px;
     margin-left: 6px;
     vertical-align: middle;
+    transition: .3s ease-in-out; /* Smooth transition for hover effects */
+    cursor: pointer;
 }
 
 /* Logo text styling */
@@ -93,7 +97,7 @@ header::before{
 
 /* Styling for the span within the logo */
 .logo span {
-    color: #fff;
+    color: #00ff51; /* Bright green for emphasis */
 }
 
 /* Hover effect for the logo */
@@ -1530,6 +1534,7 @@ footer p {
         flex-direction: column; 
         align-items: center; 
         gap: 2rem; 
+        height: auto;
     }
 
     .about-img { 
@@ -1610,17 +1615,35 @@ footer p {
     .main-nav {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 75px;
+        position: fixed;
+        top: 70px;
         left: 0;
         width: 100%;
         background: rgba(0, 0, 0, 0.95);
         padding: 1rem 0;
+        align-items: center;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+    }
+
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+
+     .header-logo {
+        height: 40px;
+        width: 80px;
     }
 
     .main-nav.active { 
         display: flex; 
+        transform: translateY(0);
     } /* JavaScript will toggle this class */
+
+    .nav-link {
+        padding: 0.75rem 0;
+        font-size: 1.1rem;
+    }
 
     .icon { 
         display: block; 
@@ -1628,6 +1651,11 @@ footer p {
 
     .menu-icon { 
         display: block; 
+    }
+
+     .menu-icon, .close-icon {
+        width: 24px;
+        height: 24px;
     }
 
     /* Logic for showing/hiding the menu with a checkbox hack */
@@ -1653,24 +1681,51 @@ footer p {
         align-items: center;
         text-align: center;
         padding: 2rem;
+        height: auto;
+        padding: 2rem 1rem;
     }
 
     .hero-text {
         order: 1;
         align-items: center;
         text-align: center;
+        margin-top: 2rem;
     }
 
     /* Reordering and resizing hero section for mobile */
     .hero-section img { 
         order: -2; 
-        margin: 2rem 0; 
-        height: 6rem; 
+        margin: 1rem auto; 
+        height: 8rem;
+        width: 8rem; 
     }
 
-    .hero-text h1, .hero-text h3, .hero-section p, .hero-section button, .social-icons {
-        margin-left: 0;
-        margin-right: 0;
+    .hero-section h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+    
+    .hero-section h3 {
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .hero-section h3 span::before {
+        font-size: 1rem;
+    }
+    
+    .hero-section p {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+     .hero-section button {
+        margin: 1rem auto;
+        width: 80%;
+    }
+
+     .social-icons {
+        margin: 1rem auto;
     }
 
     /* Adjusting layouts for smaller screens */
@@ -1690,17 +1745,28 @@ footer p {
         padding: 2rem 1rem; 
     }
 
+     .about-content-row {
+        flex-direction: column;
+    }
+
     .about-title { 
         font-size: 1.2rem; 
     }
 
     .about-img {
         order: 1;
+        width: 100%;
+        height: auto;
+        margin: 0;
     }
 
     .about-info {
         order: 2;
-        padding: 0 1rem;
+        padding: 0;
+    }
+
+     .info-grid {
+        grid-template-columns: 1fr;
     }
 
     .journey-section { 
@@ -1708,13 +1774,24 @@ footer p {
         padding: 2rem 1rem; 
     }
 
+     .journey-columns {
+        flex-direction: column;
+    }
+    
+    .journey-column {
+        width: 100%;
+    }
+    
+    .journey-title {
+        font-size: 1.8rem;
+    }
+
     .interests-grid { 
-        grid-template-columns: 1fr; 
-        padding: 0 1rem; 
+        grid-template-columns: 1fr;
     }
 
     .interests-section { 
-        padding: 20px 1rem; 
+        padding: 2rem 1rem; 
         height: auto; 
     }
 
@@ -1722,12 +1799,21 @@ footer p {
         padding: 2rem 1rem; 
     }
 
-    .project-container-1, .project-container-2 { 
-        margin: 0 1rem; 
+    .project-container-1, .project-container-2 {
+        grid-template-columns: 1fr; 
+        margin: 0; 
+    }
+
+     .project-box {
+        margin: 0.5rem 0 !important;
     }
 
     .project-container-1 .project-box:nth-child(1):hover .project-content {
         height: 100%;
+    }
+
+     .project-content p {
+        padding: 0.5rem !important;
     }
 
     .contact { 
@@ -1737,10 +1823,18 @@ footer p {
 
     .contact-card { 
         width: 100%; 
+        flex-direction: column;
+        height: auto;
     }
-    .contact-right { 
-        padding: 1.5rem; 
-        width: 100%; 
+
+    .contact-left, 
+    .contact-right {
+        flex: none;
+        width: 100%;
+    }
+
+     .contact-textarea {
+        min-height: 150px;
     }
 
     .contact-title { 
@@ -1752,65 +1846,43 @@ footer p {
     }
 }
 
-@media (max-width: 390px) {
+/* ==========================================================================
+   Very Small Screens (under 400px)
+   ========================================================================== */
 
-    /* --- Header Adjustments --- */
-    .header-container {
-        padding: 0.5rem 1rem; /* Reduces horizontal padding */
-    }
-
-    .logo {
-        font-size: 1.75rem; /* Makes the logo text slightly smaller */
-        margin-left: 8px;
-        margin-right: 8px;
-    }
-
-    .header-logo {
-        height: 45px; /* Reduces the height of the logo image */
-    }
-
-    /* --- Hero Section Adjustments --- */
-    .hero-section {
-        padding-top: 20px; /* Reduces top padding to bring content up */
-        padding-bottom: 20px;
-        justify-content: flex-start; /* Aligns content to the top */
-        overflow-x: hidden;
-    }
-
-    .hero-text h1 {
-        font-size: 32px; /* Decreases the main heading size */
-        margin-top: 4rem; /* Adjusts top margin */
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-
-    .hero-text h3 {
-        font-size: 20px; /* Decreases the subheading size */
-        margin-right: 1rem;
-        margin-left: 1rem;
+@media (max-width: 400px) {
+    html {
+        font-size: 14px;
     }
     
-    .hero-section p {
-        font-size: 18px; /* Makes paragraph text slightly smaller */
-        margin-right: 1rem;
-        margin-left: 1rem;
+    .hero-section h1 {
+        font-size: 1.8rem;
     }
-
-    .hero-section img {
-        height: 5rem; /* Reduces the size of the profile image */
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+    
+    .hero-section h3 {
+        font-size: 1rem;
     }
-
-    .social-icons {
-        margin-right: 1rem;
-        margin-left: 1rem;
+    
+    .hero-section h3 span::before {
+        font-size: 0.9rem;
     }
-
-    .profile-card { 
-        width: 90%; 
-        margin: 0.5rem auto; 
-        height: 50%; 
-        order: 2; 
+    
+    .profile-card {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .about-title {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+    
+    .info-box {
+        padding: 0.8rem;
+    }
+    
+    .contact-profile-img-wrap {
+        width: 100px;
+        height: 100px;
     }
 }
