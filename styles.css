@@ -194,6 +194,7 @@ header::before{
     align-items: flex-start;
     position: relative;
     overflow: hidden; /* Prevents content from spilling out */
+    background: 083D77;
     background-image: url('https://images.wallpaperscraft.com/image/single/road_turn_trees_194526_1920x1080.jpg');
     background-size: cover;
     background-position: center;
