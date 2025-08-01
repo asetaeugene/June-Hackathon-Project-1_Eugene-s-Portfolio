@@ -1776,6 +1776,7 @@ footer p {
         padding-top: 20px; /* Reduces top padding to bring content up */
         padding-bottom: 20px;
         justify-content: flex-start; /* Aligns content to the top */
+        overflow-x: hidden;
     }
 
     .hero-text h1 {
@@ -1806,5 +1807,12 @@ footer p {
     .social-icons {
         margin-right: 1rem;
         margin-left: 1rem;
+    }
+
+    .profile-card { 
+        width: 90%; 
+        margin: 0.5rem auto; 
+        height: 50%; 
+        order: 2; 
     }
 }
