@@ -195,7 +195,7 @@ header::before{
     position: relative;
     overflow: hidden; /* Prevents content from spilling out */
     background: 083D77;
-    background-image: url('https://images.wallpaperscraft.com/image/single/road_turn_trees_194526_1920x1080.jpg');
+    background-image: url('https://as2.ftcdn.net/v2/jpg/00/77/95/85/1000_F_77958548_YzNYMi31uPrxYpbAYII69yY3TzglTvHr.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -549,7 +549,7 @@ p{
 
 /* Main container for the about section */
 .about-main-section {
-    background: #051622;
+    background: 083D77;
     color: rgb(255, 255, 255);
     font-family: Inter, Arial, sans-serif;
     min-height: 94vh;
