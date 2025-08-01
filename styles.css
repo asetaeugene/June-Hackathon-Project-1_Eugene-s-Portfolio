@@ -47,12 +47,12 @@ header::before{
 /* Main header container */
 .site-header {
     width: 100%;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100; /* Ensures header is above other content */
-    background: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0); /* Subtle shadow for depth */
+    background-color: #0a1828;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Flex container for header content */
@@ -62,10 +62,9 @@ header::before{
     justify-content: space-between; /* Distributes items evenly */
     max-width: 1400px;
     margin: 0 auto; /* Centers the container */
-    padding: 1.75rem 0.5rem;
+    padding: 1.75rem 1.5rem;
     width: 100vw;
     position: relative;
-    background-color: #0a1828;
 }
 
 /* Logo image styling */
