@@ -62,8 +62,8 @@ header::before{
     justify-content: space-between; /* Distributes items evenly */
     max-width: 1400px;
     margin: 0 auto; /* Centers the container */
-    padding: 0.75rem 1.5rem;
-    width: 100%;
+    padding: 1.75rem 0.5rem;
+    width: 100vw;
     position: relative;
     background-color: #0a1828;
 }
@@ -1479,6 +1479,10 @@ footer p {
 
 /* For tablets and smaller desktops (max-width: 992px) */
 @media (max-width: 992px) {
+    html {
+        overflow-x: hidden;
+    }
+
     .header-container { 
         padding: 0.75rem 1rem; 
     }
@@ -1530,10 +1534,16 @@ footer p {
     }
 
     /* Stacks about section content vertically */
+
+     .about-main-section {
+        height: auto; /* REMOVE fixed height */
+        padding: 4rem 1rem; /* Add vertical padding for spacing */
+    }
+
     .about-content-row { 
         flex-direction: column; 
         align-items: center; 
-        gap: 2rem; 
+        gap: 3rem; 
         height: auto;
     }
 
@@ -1542,13 +1552,19 @@ footer p {
         width: 100%; 
         max-width: 500px; 
         order: 1; 
-        height: 100%; 
+        height: auto; 
     }
 
     .about-info { 
         padding: 0 1rem; 
         margin: 0; 
         order: 2; 
+        text-align: center; /* Center all text content */
+        max-width: 850px; /* Prevent text lines from being too wide */
+    }
+
+     .info-grid {
+        text-align: left; /* Keep grid text aligned to the left for clarity */
     }
 
     /* Adjusts interests grid */
@@ -1612,6 +1628,10 @@ footer p {
 /* For mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
     /* Mobile navigation becomes a toggleable menu */
+    html {
+        overflow-x: hidden;
+    }
+
     .main-nav {
         display: none;
         flex-direction: column;
@@ -1853,6 +1873,7 @@ footer p {
 @media (max-width: 400px) {
     html {
         font-size: 14px;
+        overflow-x: hidden;
     }
     
     .hero-section h1 {
@@ -1863,26 +1884,22 @@ footer p {
         font-size: 1rem;
     }
     
-    .hero-section h3 span::before {
-        font-size: 0.9rem;
-    }
-    
     .profile-card {
         width: 95%;
-        padding: 1rem;
+        padding: 1.5rem 1rem;
     }
     
     .about-title {
         font-size: 1.1rem;
-        margin: 1rem 0;
+        margin: 2rem 1rem;
     }
     
     .info-box {
-        padding: 0.8rem;
+        padding: 1rem;
     }
     
     .contact-profile-img-wrap {
         width: 100px;
-        height: 100px;
+        height: 100px;
     }
 }
