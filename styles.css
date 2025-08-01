@@ -194,7 +194,6 @@ header::before{
     align-items: flex-start;
     position: relative;
     overflow: hidden; /* Prevents content from spilling out */
-    background: 083D77;
     background-image: url('https://as2.ftcdn.net/v2/jpg/00/77/95/85/1000_F_77958548_YzNYMi31uPrxYpbAYII69yY3TzglTvHr.jpg');
     background-size: cover;
     background-position: center;
@@ -549,7 +548,7 @@ p{
 
 /* Main container for the about section */
 .about-main-section {
-    background: 083D77;
+    background: rgb(8, 61, 119);
     color: rgb(255, 255, 255);
     font-family: Inter, Arial, sans-serif;
     min-height: 94vh;
