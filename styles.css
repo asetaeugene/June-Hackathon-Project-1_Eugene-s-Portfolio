@@ -18,6 +18,7 @@ html{
     margin: 0 auto;
     font-family: 'Poppins', sans-serif; /* Sets a modern, clean font */
     scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+    overflow-x: hidden;
 }
 
 /* Body styles for color, layout, and overflow handling */
@@ -47,7 +48,7 @@ header::before{
 /* Main header container */
 .site-header {
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 100; /* Ensures header is above other content */
@@ -117,7 +118,6 @@ header::before{
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    transition: color 0.2s;
     padding: 0.25rem 0.5rem;
 }
 
@@ -126,6 +126,7 @@ header::before{
 .nav-download:hover {
     color: #00ff51;
     border-bottom: 2px solid #00ff51; /* Adds an underline effect on hover */
+    transition: color 0.3s ease;
 }
 
 /* Icon for mobile menu (hamburger icon) */
@@ -1488,6 +1489,31 @@ footer p {
 
     .main-nav { 
         gap: 1rem; 
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #2c3e50;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .close-icon {
+        display: none;
+    }
+
+    .nav-toggle:checked ~ .icon .menu-icon {
+        display: none;
+    }
+
+    .nav-toggle:checked ~ .icon .close-icon {
+        display: block;
     }
 
     .header-btn { 
@@ -1501,6 +1527,7 @@ footer p {
         align-items: center;
         text-align: center;
         padding: 2rem;
+        min-height: 150vh;
     }
 
     .hero-text {
@@ -1526,9 +1553,9 @@ footer p {
     }
 
     .profile-card { 
-        width: 70%; 
-        height: auto; 
+        width: 70%;
         margin: 2rem; 
+        height: fit-content;
         order: 2; 
     }
 
@@ -1569,7 +1596,7 @@ footer p {
     /* Adjusts interests grid */
     .interests-grid { 
         grid-template-columns: repeat(2, 1fr); 
-        max-width: 920px;
+        max-width: 910px;
         height: 100%;
         grid-auto-rows: 1fr;
         flex-grow: 1;
@@ -1627,12 +1654,11 @@ footer p {
 /* For mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
     /* Mobile navigation becomes a toggleable menu */
-    html {
+    body {
         overflow-x: hidden;
     }
 
     .main-nav {
-        display: none;
         flex-direction: column;
         position: fixed;
         top: 70px;
@@ -1657,7 +1683,7 @@ footer p {
     .main-nav.active { 
         display: flex; 
         transform: translateY(0);
-    } /* JavaScript will toggle this class */
+    }
 
     .nav-link {
         padding: 0.75rem 0;
@@ -1670,6 +1696,10 @@ footer p {
 
     .menu-icon { 
         display: block; 
+    }
+
+    .close-icon {
+        display: none;
     }
 
      .menu-icon, .close-icon {
@@ -1700,7 +1730,7 @@ footer p {
         align-items: center;
         text-align: center;
         padding: 2rem;
-        height: auto;
+        height: 150vh;
         padding: 2rem 1rem;
     }
 
@@ -1873,6 +1903,10 @@ footer p {
     html {
         font-size: 14px;
         overflow-x: hidden;
+    }
+
+    .hero-section {
+        height: 150vh;
     }
     
     .hero-section h1 {
