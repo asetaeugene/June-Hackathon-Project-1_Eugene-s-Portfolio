@@ -9,6 +9,7 @@
     box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
     margin: 0; /* Removes default margin */
     padding: 0; /* Removes default padding */
+    scroll-behavior: smooth;
 }
 
 /* Smooth scrolling and default font for the entire document */
@@ -30,7 +31,8 @@ body{
     width: 100vw; /* Full viewport width */
     overflow: scroll; /* Allows vertical scrolling */
     overflow-x: hidden; /* Prevents horizontal scrolling */
-    min-width: 320px; /* prevents content from squezzing*/
+    min-width: 220px; /* prevents content from squezzing*/
+    scroll-behavior: smooth;
 }
 
 /* ==========================================================================
@@ -48,7 +50,7 @@ header::before{
 /* Main header container */
 .site-header {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100; /* Ensures header is above other content */
@@ -61,9 +63,8 @@ header::before{
     display: flex;
     align-items: center; /* Vertically aligns items */
     justify-content: space-between; /* Distributes items evenly */
-    max-width: 1400px;
     margin: 0 auto; /* Centers the container */
-    padding: 1.75rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     width: 100vw;
     position: relative;
 }
@@ -153,7 +154,7 @@ header::before{
     margin-left: 8px;
     margin-right: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 /* Link inside the header button */
@@ -259,7 +260,7 @@ header::before{
         content: 'Junior UI/UX Designer'; 
     }
     61%, 80%{ 
-        content: 'Youtuber'; 
+        content: 'Blogger'; 
     }
     81%, 100%{ 
         content: 'Student'; 
@@ -275,7 +276,7 @@ header::before{
 
     /* Types out the word */
     5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
-        width: calc(100% + 8px);
+        width: calc(100% + 3px);
     }
 }
 
@@ -293,7 +294,7 @@ header::before{
     margin-top: 8px;
     margin-right: 2rem;
     margin-left: 2rem;
-    font-size: 15px;
+    font-size: 25px;
     color: #f7f4e9;
 }
 
@@ -466,7 +467,7 @@ p{
     border-radius: 20px;
     padding: 2rem 1.5rem;
     width: 400px;
-    height: 500px;
+    height: auto;
     box-shadow: 0 0 25px #FFD600; /* Yellow glowing shadow */
     display: flex;
     flex-direction: column;
@@ -771,7 +772,6 @@ p{
 
 /* Main container for the journey/timeline section */
 .journey-section {
-    background: #18181b;
     color: #fff;
     padding: 30px 0;
     width: 100vw;
@@ -789,8 +789,8 @@ p{
     width: 100%;
     height: 100%;
     background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
-    filter: blur(5px) brightness(0.3);
-    opacity: 0.7;
+    filter: blur(5px) brightness(0.5);
+    opacity: 0.9;
     z-index: 0; /* Places the pseudo-element behind the content */
 }
 
@@ -888,7 +888,7 @@ p{
 /* Dot on the timeline */
 .journey-dot {
     position: absolute;
-    left: -13px; /* Positions the dot on the border */
+    left: -10px; /* Positions the dot on the border */
     top: 32px;
     width: 16px;
     height: 16px;
@@ -975,7 +975,7 @@ p{
     align-items: center;
     transition: transform 0.2s, box-shadow 0.2s;
     border: 2px solid transparent;
-    animation: aboutSection 3s ease-in forwards;
+    animation: .3s ease-in forwards;
 }
 
 /* Hover effect for the interest card */
@@ -1043,13 +1043,14 @@ p{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    animation: aboutSection 3s ease-in forwards;
+    animation: .3s ease-in forwards;
 }
 
 /* Hover effect for the project box */
 .project-box:hover{
     box-shadow: 0 0 10px #00ff51,
                 0 0 20px #00ff51; /* Glowing effect */
+    transform: translateY(-8px) scale(1.03);
 }
 
 /* Content overlay for the project box */
@@ -1058,7 +1059,8 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #0c2521;
+    background-color: rgba(99, 182, 251, 0.85);
+    opacity: 7;
     padding: 20px;
     transform: translateY(100%); /* Hides the content by default */
     transition: .5s ease;
@@ -1265,7 +1267,7 @@ p{
   border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
   overflow: hidden;
-  animation: aboutSection 3s ease-in forwards;
+  animation: .3s ease-in forwards;
 }
 
 /* Left side of the contact card (profile information) */
@@ -1668,7 +1670,7 @@ footer p {
         padding: 1rem 0;
         align-items: center;
         transform: translateY(-150%);
-        transition: transform 0.3s ease;
+        transition: 0.3s ease;
     }
 
     .header-container {
